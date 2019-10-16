@@ -6,7 +6,6 @@ import collections
 
 
 def convert_ast(node, return_type='string', include_type=False, sep=':'):
-    count = 1
 
     def _flatten_dict(d, parent_key='', sep=':'):
         items = []
@@ -22,7 +21,6 @@ def convert_ast(node, return_type='string', include_type=False, sep=':'):
         return sum(([x] if not isinstance(x, list) else _flatten_list(x) for x in lst), [])
 
     def _format(node):
-        nonlocal count
         if isinstance(node, ast.AST):
             d = _flatten_dict({key: _format(value) for key,
                                value in ast.iter_fields(node) if key != 'ctx'})
