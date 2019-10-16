@@ -1,3 +1,7 @@
+## Purpose of the project
+This project will provide you a step-by-step guide to create a Python program to extract the last integer of each line in a text file.
+
+
 ## Verify locally
 To test this module locally:
 * Open up a terminal at the project root
@@ -43,7 +47,12 @@ answer 42
 Using the [str.split()](https://docs.python.org/3.7/library/stdtypes.html#str.split) function, split the `line` into a variable named `splitted`, with separator of a space.
 
 
-## Task 4
+## Task 4: Get the last element in the splitted list
+Once we get the `splitted` list, it's time to get the last element in it.
+
+To get the element at a given `index` in a `list`, use the following syntax: `list`[`index`], then assign it to a variable named `last`.
+
+The `index` for the last element is `-1`.
 
 ## Task 5
 
