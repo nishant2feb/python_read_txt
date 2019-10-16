@@ -54,8 +54,17 @@ To get the element at a given `index` in a `list`, use the following syntax: `li
 
 The `index` for the last element is `-1`.
 
-## Task 5
+## Task 5: Cast `last` into an int
+Since we know for sure the last element is an integer, it's good practice to cast it to an integer (e.g. for comparison with another integer).
 
-## Task 6
+The build-in function [`int()`](https://docs.python.org/3.7/library/functions.html#int) can be used for such casting.
 
+Store the casting result into a variable named `value`.
+
+
+## Task 6: Print out the value
+Finally, we get the integer of each line in the input file.
+It's time to print it out.
+
+Print the result `value` using the [`print()`](https://docs.python.org/3.7/library/functions.html#print) build-in function.
 
