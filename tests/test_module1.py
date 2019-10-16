@@ -38,3 +38,14 @@ def test_get_last_element_in_splitted():
     import inspect
     inspected = inspect.getsource(main)
     assert 'last = splitted[-1]' in inspected, message
+
+
+def test_cast_last_element_to_int():
+    calls = get_calls(main)
+    message = "Are you calling `int` to cast `last`?"
+
+    assert 'int:last' in calls, message
+
+    assignments = get_assignments(main)
+    message = "Do you store the casted result into `value`"
+    assert 'value:int:last' in assignments, message
