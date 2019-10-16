@@ -1,7 +1,3 @@
-import ast
-import inspect
-
-import astunparse
 import pytest
 
 from src import main
@@ -34,18 +30,11 @@ def test_split_line_with_space():
 
 def test_get_last_element_in_splitted():
     assignments = get_assignments(main, return_type='list')
+    message = "Do you get the last element of `splitted` and assign it to `last`?"
 
-    # print(assignments)
+    # XXX: should it be -1, instead of 1 ?
+    assert ['last', 'splitted', '1'] in assignments, message
 
-
-def test_use_astunparse():
+    import inspect
     inspected = inspect.getsource(main)
-    parsed = ast.parse(inspected)
-    unparsed = astunparse.unparse(parsed)
-
-    print(type(inspected))  # 'str'
-    print(type(parsed))
-    print(type(unparsed))
-
-    print(inspected)
-    
+    assert 'last = splitted[-1]' in inspected, message
