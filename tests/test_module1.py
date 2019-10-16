@@ -49,3 +49,10 @@ def test_cast_last_element_to_int():
     assignments = get_assignments(main)
     message = "Do you store the casted result into `value`"
     assert 'value:int:last' in assignments, message
+
+
+def test_print_result_value():
+    calls = get_calls(main)
+    message = "Do you `print` the result `value`?"
+
+    assert 'print:value' in calls, message
